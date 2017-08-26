@@ -1,5 +1,7 @@
 require("dotenv").config({ path: "./config/env/.env" });
-const express = require("express");
+import express from 'express';
+const path = require('path');
+
 const logger = require("morgan");
 
 const app = express();
@@ -15,18 +17,10 @@ db.connectToDB(process.env.NODE_ENV);
 
 if (isProduction) {
 } else {
+
   // Enable CORS
   app.use(cors());
 
-  /*   const options = {
-    user: process.env.MLAB_USER,
-    pass: process.env.MLAB_PASSWORD,
-    useMongoClient: true
-  };
-  mongoose.connect(
-    "mongodb://" + process.env.MLAB_HOST + ":" + process.env.MLAB_PORT + "/aci",
-    options
-  ); */
 }
 //Enable logging
 app.use(
