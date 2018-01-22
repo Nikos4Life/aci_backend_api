@@ -1,4 +1,4 @@
-const User = require("../../models/user");
+import User from '../../models/user.model';
 
 async function getUsers(req, res) {
   try {
@@ -9,6 +9,19 @@ async function getUsers(req, res) {
   }
 }
 
+async function createUser(req, res) {
+  const newUser = new User({
+    username: req.body.username
+  });
+  try {
+    let user = await newUser.save();
+    res.json(user);
+  } catch (error) {
+    res.json(error);
+  }
+}
+
 module.exports = {
-  getUsers: getUsers
+  getUsers: getUsers,
+  createUser: createUser
 };

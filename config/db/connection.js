@@ -1,10 +1,8 @@
-const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
 let options = {};
 
-function connectToDB(env) {
+function connectToDB(env, app) {
   if (env === "production") {
     options = {
       user: process.env.MLAB_USER,

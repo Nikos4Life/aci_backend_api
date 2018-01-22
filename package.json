@@ -4,7 +4,8 @@
   "description": "ACi Backend API",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node ./bin/www",
+    "stard": "babel-node ./bin/www",
+    "dev": "nodemon --exec yarn run babel-node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,6 +1,7 @@
-const express = require("express");
+import express from 'express';
+import v1ApiController from './v1';
+
 const router = express.Router();
-const v1ApiController = require("./v1");
 
 router.use("/v1", v1ApiController);
 

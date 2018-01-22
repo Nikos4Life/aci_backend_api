@@ -1,19 +1,19 @@
 require("dotenv").config({ path: "./config/env/.env" });
 import express from 'express';
-const path = require('path');
-
-const logger = require("morgan");
+import path from 'path';
+import logger from 'morgan';
+import helmet from 'helmet';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import db from './config/db/connection';
+import cors from 'cors';
 
 const app = express();
-const db = require("./config/db/connection");
-const helmet = require("helmet");
-const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
-const routes = require("./routes");
-const cors = require("cors");
+import routes from './routes';
 
 const isProduction = process.env.NODE_ENV === "production";
-db.connectToDB(process.env.NODE_ENV);
+
+db.connectToDB(process.env.NODE_ENV, app);
 
 if (isProduction) {
 } else {
