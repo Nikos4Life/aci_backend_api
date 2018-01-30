@@ -16,6 +16,7 @@ const isProduction = process.env.NODE_ENV === "production";
 db.connectToDB(process.env.NODE_ENV, app);
 
 if (isProduction) {
+
 } else {
 
   // Enable CORS
