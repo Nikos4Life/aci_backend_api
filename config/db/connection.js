@@ -18,7 +18,7 @@ function connectToDB(env, app) {
         process.env.LOCAL_DB_NAME,
       options
     );
-    mongoose.Promise = global.Promise;
+    mongoose.Promise = Promise;
     app.set("mongooseClient", mongoose);
     console.log("Connected to MLAB DB.");
   } else {

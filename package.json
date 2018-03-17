@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Nikos4Life/aci_backend_api#readme",
   "dependencies": {
+    "babel-loader": "^7.1.4",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
@@ -34,7 +35,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "nodemon": "^1.11.0",
-    "webpack": "^3.5.5"
+    "lodash": "^4.17.5",
+    "nodemon": "^1.11.0"
   }
 }
